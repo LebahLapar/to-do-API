@@ -25,7 +25,7 @@ app.get('/todos', (req,res) => {
 
 app.get('/todos/:id', (req,res) => {
     const id = req.params.id;
-    const todo = todos.find(t => t.titlo === id);
+    const todo = todos.find(t => t.ido === id);
 
     if (!todo) {
         return res.status(404).json({messege : "tidak ditemukan data"});
@@ -36,7 +36,7 @@ app.get('/todos/:id', (req,res) => {
 
 app.delete('/todos/hapus/:id', (req,res) => {
     const hapus = req.params.id;
-    const FixHapus = todos.findIndex(t => t.title === hapus);
+    const FixHapus = todos.findIndex(t => t.ido === hapus);
 
     if (FixHapus == -1) {
         return res.status(404).json({messege : "takde data"});
